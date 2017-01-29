@@ -3,8 +3,8 @@
 var city = {
   name: 'Snowdia',
   lat: 40,
-  lng: 30,
-  limit: 30,
+  lng: 40,
+  limit: 50,
   isOutOfLimit: function(lat, lng) { 
     var radlat1 = Math.PI * this.lat/180
     var radlat2 = Math.PI * lat/180
