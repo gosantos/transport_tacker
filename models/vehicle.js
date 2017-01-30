@@ -30,7 +30,6 @@ var vehicleSchema = new Schema({
   }
 });
 
-
 vehicleSchema.methods.move = function(){
   /** Extend Number object with method to convert numeric degrees to radians */
   
@@ -51,8 +50,8 @@ vehicleSchema.methods.move = function(){
  *     var p2 = p1.rhumbDestinationPoint(40300, 116.7); // 50.9642°N, 001.8530°E
  */
   
-  var radius = 6371e3
-  const distance = 0.1
+  var radius = 6378.1
+  const distance = 10
   
   var δ = Number(distance) / radius; // angular distance in radians
   var φ1 = Number(this.lat).toRadians(), λ1 = Number(this.lng).toRadians();
@@ -70,8 +69,8 @@ vehicleSchema.methods.move = function(){
   var Δλ = δ*Math.sin(θ)/q;
   var λ2 = λ1 + Δλ;
 
-  console.log(φ2.toDegrees())
-  console.log(((λ2.toDegrees()+540) % 360) - 180)
+  this.lat = φ2.toDegrees()
+  this.lng = ((λ2.toDegrees()+540) % 360) - 180
 }
 
 mongoose.model('Vehicle', vehicleSchema);

@@ -6,7 +6,6 @@ Array.prototype.sample = function(){
   return this[Math.floor(Math.random()*this.length)];
 }
 
-
 //adding 1000 vehicles entries
 var options = {
     url: 'http://localhost:3000/vehicles',
@@ -34,4 +33,19 @@ loadtest.loadTest(options, function(error, results)
     console.log('Tests run successfully');
 });
 
+var options = {
+    url: 'http://localhost:3000/vehicles/update',
+    concurrent: 10,
+    method: 'PUT',
+    maxSeconds:10
+};
 
+loadtest.loadTest(options, function(error, results)
+{
+    if (error)
+    {
+        return console.error('Got an error: %s', error);
+    }
+    console.log(results);
+    console.log('Tests run successfully');
+});

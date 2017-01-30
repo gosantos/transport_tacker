@@ -20,13 +20,12 @@ router.route('/')
 
 		vehicle.save(function(err, vehicle){
 			if (err){
-				console.log(err);
 				return res.send(500, err);
 			}
 
 			return res.json(vehicle);
 		});
-	})
+    })
 
     .get(function(req, res){
         Vehicle.find(function(err, vehicles){
@@ -37,6 +36,43 @@ router.route('/')
         });
 
     });
+
+router.route('/update')
+	.put(function(req, res){
+
+
+	  	Vehicle.count().exec(function (err, count) {
+			var vehicle;
+
+		    var random = Math.floor(Math.random() * count)
+
+		    Vehicle.findOne().skip(random).exec(
+		    	function (err, v) {
+
+		        	if (err)
+						return res.send(500, err);
+
+					vehicle = v;
+		
+					if (city.isOutOfLimit(vehicle.lat, vehicle.lng))
+						return res.sendStatus(304);
+					
+
+					vehicle.move();
+					vehicle.timestamp = Date.now();
+
+					vehicle.save(function(err, vehicle){
+						if (err)
+							return res.send(err);
+
+						return res.json(vehicle);
+					})
+		      	})
+
+	  	})
+
+		
+	})
 
 router.route('/:id')
 
