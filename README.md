@@ -1,7 +1,7 @@
 # Transport Tracker
 
 ## Description
-This is a 
+Snowdonia town has ~1000 vehicles in active operation at any given moment. Each vehicle could theoretically emit their position at the exact same moment. The solution must demonstrate evidence of 1000 concurrent emissions (at maximum) being handled by your developed endpoint without an error.
 
 ## Prerequisites
 
@@ -41,3 +41,4 @@ $ npm start
 ```bash
 $ npm test
 ```
+## Regarding the solution
