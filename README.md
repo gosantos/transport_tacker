@@ -36,6 +36,8 @@ $ npm start
 
 ## Running the tests
 
+In another terminal start the tests with the following command:
+
 ```bash
 $ npm test
 ```
