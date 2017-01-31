@@ -58,11 +58,11 @@ The method *isOutOfLimit* in the file *models/city.js* controls that.
 
 ### Vehicles
 
-All vehicles are departing from the downtwon.
+All vehicles are departing from the downtown.
 
-The interval time to updated a record uses the method *checkIfNeedsTobeUpdated* in the file *models/vehicle.js*.
+The interval time to update a record uses the method *checkIfNeedsTobeUpdated* in the file *models/vehicle.js*.
 
-The moving simulation of all vehicles was did using the algorithm  it follows:
+The moving simulation of all vehicles was done using the algorithm  it follows:
 
 *model/vehicle.js*
 
