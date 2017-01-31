@@ -62,11 +62,9 @@ All vehicles are departing from the downtown.
 
 The control of the interval time to update a record is implemented by the method *checkIfNeedsTobeUpdated* in the file *models/vehicle.js*.
 
-The moving simulation of all vehicles was developed using the algorithm  it follows:
-
-*model/vehicle.js*
-
 ### Vehicle moving simulation
+
+The moving simulation of all vehicles was developed using the following algorithm: 
 
 http://www.movable-type.co.uk/scripts/latlong.html
 
