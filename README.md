@@ -86,6 +86,6 @@ In a real scenario the client will now its information, then the endpoiont used 
 
 I was not able to make the 1000 concurrent requests and here goes my possible reasons for that:
 
-1) Maybe to support this 1000 concurrent requests would be necessary create multiple backend containers (using docker) and put a middleware between the client and the server, this middleware would act like a load balancer redirecting the requests for the less overloaded container;
-2) The service layer is not well implemented, the endpoint "update" shoule be optimized, find a "random vehicle" to update its information is not the best solution;
-3) I had not a real server to test this solution, probably in a paid service like Amazon the performance would be pretty much better;
+* Maybe to support this 1000 concurrent requests would be necessary create multiple backend containers (using docker) and put a middleware between the client and the server, this middleware would act like a load balancer redirecting the requests for the less overloaded container;
+* The service layer is not well implemented, the endpoint "update" shoule be optimized, find a "random vehicle" to update its information is not the best solution;
+* I had not a real server to test this solution, probably in a paid service like Amazon the performance would be pretty much better;
