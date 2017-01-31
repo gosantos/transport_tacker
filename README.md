@@ -94,12 +94,12 @@ The library provides a report after the test runs.
 
 ### Difficulties Encountered
 
-The service layer code is a little bit coupled mainly the endpoint "update". In my opinion the right place to use the method "move" to change the vehicle position would be the test, however I was not able to use the testing library to create this scenario. 
-My solution was put the method "move" inside the "/update" endpoint.
+The service layer code is a little bit coupled mainly the endpoint "update". In my opinion the right place to use the method "move" to change the vehicle position would be the *test.js*, however I was not able to reproduce this scenario using the test library chosen.
+My solution was write the method "move" inside the "/update" endpoint. In a real scenario, the client will know its information, then the endpoiont used would be the ":id" with the method "PUT".
 In a real scenario the client will know its information, then the endpoiont used would be the ":id" with the method "PUT". 
 
 I was not able to make the 1000 concurrent requests and here goes my possible reasons for that:
 
-* Maybe to support this 1000 concurrent requests would be necessary create multiple backend containers (using docker) and put a middleware between the client and the server, this middleware would act like a load balancer redirecting the requests for the less overloaded container;
-* The service layer is not well implemented, the endpoint "update" shoule be optimized, find a "random vehicle" to update its information is not the best solution;
+* Maybe to support this 1000 concurrent requests would be necessary create multiple backend containers (using docker) and set a middleware between the client and the server, this middleware would act like a load balancer redirecting the requests for the less overloaded container;
+* The service layer is not well implemented, the endpoint "update" should be optimized, find a "random vehicle" to update its information is not the best solution;
 * I had not a real server to test this solution, in a paid service like Amazon the performance would be pretty much better;
