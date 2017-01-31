@@ -62,7 +62,7 @@ All vehicles are departing from the downtown.
 
 The interval time to update a record uses the method *checkIfNeedsTobeUpdated* in the file *models/vehicle.js*.
 
-The moving simulation of all vehicles was done using the algorithm  it follows:
+The moving simulation of all vehicles was developed using the algorithm  it follows:
 
 *model/vehicle.js*
 
@@ -78,7 +78,7 @@ The method *move* in the file *models/vehicle.js* is doing that job.
 
 *routes/vehicles.js*.
 
-The "/update" endpoint contains the most complicated logic.
+The "/update" endpoint contains the most complicated logic, but the basics constraints are described below: 
 
 * The service will return a 304 status code when the vehicle is out of city limits (using the *isOutOfLimit* function);
 * The service will return a 304 status code when the update interval is less than 20 seconds for that vehicle (using the *checkIfNeedsTobeUpdated* function);
@@ -87,7 +87,7 @@ The "/update" endpoint contains the most complicated logic.
 
 I have used the *Postman* chrome extension to test the service behavior without stressing tests.
 
-For the benchmarking testing I choose the "loadtest" lib in order to populate the database and simulate the concurrency update vehicle testing.
+For the benchmarking I choose the "loadtest" lib in order to populate the database and simulate the concurrency update vehicle testing.
 From all libraries I researched, this was in my opinion the easier to use and I thought and as well the more fittable for my scenario.
 
 The library provides a report after the test runs.
