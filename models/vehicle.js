@@ -34,6 +34,9 @@ var vehicleSchema = new Schema({
   }
 });
 
+vehicleSchema.methods.checkIfNeedsTobeUpdated = function(){
+  return (Date.now() - this.timestamp) < this.updateFrequency
+}
 vehicleSchema.methods.move = function(){
   /** Extend Number object with method to convert numeric degrees to radians */
   
@@ -55,7 +58,7 @@ vehicleSchema.methods.move = function(){
  */
   
   var radius = 6378.1
-  const distance = 10
+  const distance = 1 //the vehicle tchanges its position in 1 km each twenty seconds
   
   var δ = Number(distance) / radius; // angular distance in radians
   var φ1 = Number(this.lat).toRadians(), λ1 = Number(this.lng).toRadians();

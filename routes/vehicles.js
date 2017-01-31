@@ -54,7 +54,7 @@ router.route('/update')
 		        	if (err)
 						return res.send(500, err);
 
-					if ((Date.now() - vehicle.timestamp) < vehicle.updateFrequency)
+					if (vehicle.checkIfNeedsTobeUpdated())
 						return res.sendStatus(304);
 		
 					if (city.isOutOfLimit(vehicle.lat, vehicle.lng))
