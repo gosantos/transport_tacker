@@ -11,7 +11,7 @@ Make sure you have all of the following prerequisites installed in your machine:
 * Node.js - [Download & Install Node.js](https://nodejs.org/en/download/) and the npm package manager. If you encounter any problems, you can also use this [GitHub Gist](https://gist.github.com/isaacs/579814) to install Node.js.
 * MongoDB - [Download & Install MongoDB](http://www.mongodb.org/downloads), and make sure it's running on the default port (27017).
 
-## Cloning the repostiroy
+## Cloning the repository
 
 First of all you to clone the repository:
 
@@ -51,7 +51,7 @@ The city model is just a mock created in order to simulate a real secenario wher
 
 ### City range vehicles control
 
-The method was created used the algorithim it follows: 
+The method was created using the following algorithm: 
 http://www.geodatasource.com/developers/javascript
 
 The method *isOutOfLimit* in the file *models/city.js* controls that.
@@ -60,13 +60,13 @@ The method *isOutOfLimit* in the file *models/city.js* controls that.
 
 All vehicles are departing from the downtwon.
 
-model/vehicle.js
-
-### Vehicle moving simulation
-
 The interval time to updated a record uses the method *checkIfNeedsTobeUpdated* in the file *models/vehicle.js*.
 
-The moving simulation of all vehicles was did using the algorithim it follows:
+The moving simulation of all vehicles was did using the algorithm  it follows:
+
+*model/vehicle.js*
+
+### Vehicle moving simulation
 
 http://www.movable-type.co.uk/scripts/latlong.html
 
@@ -85,9 +85,9 @@ The "/update" endpoint contains the most complicated logic.
 
 ### Testing 
 
-I have used the *Postman* chrome extension to test the service behavior.
+I have used the *Postman* chrome extension to test the service behavior without stressing tests.
 
-I choose the "loadtest" lib in order to populate the database and simulate the concurrency update vehicle testing.
+For the benchmarking testing I choose the "loadtest" lib in order to populate the database and simulate the concurrency update vehicle testing.
 From all libraries I researched, this was in my opinion the easier to use and I thought and as well the more fittable for my scenario.
 
 The library provides a report after the test runs.
