@@ -19,6 +19,7 @@
     "uuid": "^3.0.1"
   },
   "devDependencies": {
-    "loadtest": "^2.2.1"
+    "loadtest": "^2.2.1",
+    "standard": "^8.6.0"
   }
 }
