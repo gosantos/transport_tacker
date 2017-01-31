@@ -66,7 +66,6 @@ model/vehicle.js
 
 The interval time to updated a record uses the method *checkIfNeedsTobeUpdated* in the file *models/vehicle.js*.
 
-
 The moving simulation of all vehicles was did using the algorithim it follows:
 
 http://www.movable-type.co.uk/scripts/latlong.html
@@ -81,8 +80,8 @@ The method *move* in the file *models/vehicle.js* is doing that job.
 
 The "/update" endpoint contains the most complicated logic.
 
-* The service will return a 304 status code when the vehicle is out of city limits (using the *isOutOfLimit* function)
-* The service will return a 304 status code when the update interval is less than 20 seconds for that vehicle. 
+* The service will return a 304 status code when the vehicle is out of city limits (using the *isOutOfLimit* function);
+* The service will return a 304 status code when the update interval is less than 20 seconds for that vehicle (using the *checkIfNeedsTobeUpdated* function);
 
 ### Testing library
 
