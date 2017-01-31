@@ -16,7 +16,7 @@ Make sure you have all of the following prerequisites installed in your machine:
 First of all you have to clone the repository:
 
 ```bash
-$ git clone https://github.com/gosantos/baconlab.git
+$ git clone https://github.com/gosantos/transport_tracker.git
 ```
 
 ## Installation
