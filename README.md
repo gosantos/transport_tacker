@@ -43,10 +43,33 @@ $ npm test
 ```
 ## Regarding the solution
 
+### City
+
+The city model is just a mock created in order to simulate a real secenario where will exist a lot of cities.
+
+*models/city.js*
 
 ### City range vehicles control
 
+The method was created used the algorithim it follows: 
+http://www.geodatasource.com/developers/javascript
+
+The method *isOutOfLimit* in the file *models/city.js* controls that.
+
+### Vehciles
+
+All vehicles are departing from the downtwon.
+
+model/vehicle.js
+
 ### Vehicle moving simulation
+
+http://www.movable-type.co.uk/scripts/latlong.html
+
+The vehicles are changing their positions in 1 km each 20 seconds (I know might be too much, but to test the service is a good approach)
+
+### Service
+The service will return a 304 status code when the vehicles is out of city limits.
 
 ### Testing library
 
