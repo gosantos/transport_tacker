@@ -56,7 +56,7 @@ http://www.geodatasource.com/developers/javascript
 
 The method *isOutOfLimit* in the file *models/city.js* controls that.
 
-### Vehciles
+### Vehicles
 
 All vehicles are departing from the downtwon.
 
