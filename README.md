@@ -45,7 +45,7 @@ $ npm test
 
 ### City
 
-The city model is just a mock created in order to simulate a real secenario where will exist a lot of cities.
+The city model is just a mock created in order to simulate a real secenario where a lot of cities will exist.
 
 *models/city.js*
 
