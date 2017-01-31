@@ -54,13 +54,13 @@ The city model is just a mock created in order to simulate a real secenario wher
 The method was created using the following algorithm: 
 http://www.geodatasource.com/developers/javascript
 
-The method *isOutOfLimit* in the file *models/city.js* controls that.
+The method *isOutOfLimit* in the file *models/city.js* controls it.
 
 ### Vehicles
 
 All vehicles are departing from the downtown.
 
-The interval time to update a record uses the method *checkIfNeedsTobeUpdated* in the file *models/vehicle.js*.
+The control of the interval time to update a record is implemented by the method *checkIfNeedsTobeUpdated* in the file *models/vehicle.js*.
 
 The moving simulation of all vehicles was developed using the algorithm  it follows:
 
@@ -70,7 +70,7 @@ The moving simulation of all vehicles was developed using the algorithm  it foll
 
 http://www.movable-type.co.uk/scripts/latlong.html
 
-The vehicles are changing their positions in 1 km each 20 seconds (I know might be too much, but to test the service is a good approach)
+The vehicles are changing their positions in 1 km every 20 seconds (I know might be too much, but to test the service is a good approach)
 
 The method *move* in the file *models/vehicle.js* is doing that job.
 
@@ -87,8 +87,8 @@ The "/update" endpoint contains the most complicated logic, but the basics const
 
 I have used the *Postman* chrome extension to test the service behavior without stressing tests.
 
-For the benchmarking I chose the "loadtest" library in order to populate the database and simulate the concurrency update vehicle testing.
-From all libraries I researched, this was in my opinion the easier to use and I thought and as well the more fittable for my scenario.
+For the benchmarking I chose the "loadtest" library in order to populate the database and to simulate the concurrent vehicle update.
+From all libraries I found, this was, in my opinion, the easier one to use and I thought and as well as the most fittable to my scenario.
 
 The library provides a report after the test runs.
 
