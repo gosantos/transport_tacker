@@ -83,9 +83,11 @@ The "/update" endpoint contains the most complicated logic.
 * The service will return a 304 status code when the vehicle is out of city limits (using the *isOutOfLimit* function);
 * The service will return a 304 status code when the update interval is less than 20 seconds for that vehicle (using the *checkIfNeedsTobeUpdated* function);
 
-### Testing library
+### Testing 
 
-I choose the "loadtest" library in order to populate the database and simulate the concurrency update vehicle testing.
+I have used the *Postman* chrome extension to test the service behavior.
+
+I choose the "loadtest" lib in order to populate the database and simulate the concurrency update vehicle testing.
 From all libraries I researched, this was in my opinion the easier to use and I thought and as well the more fittable for my scenario.
 
 The library provides a report after the test runs.
