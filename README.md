@@ -69,7 +69,9 @@ http://www.movable-type.co.uk/scripts/latlong.html
 The vehicles are changing their positions in 1 km each 20 seconds (I know might be too much, but to test the service is a good approach)
 
 ### Service
-The service will return a 304 status code when the vehicles is out of city limits.
+
+* The service will return a 304 status code when the vehicle is out of city limits.
+* The service will return a 304 status code when the update interval is less than 20 seconds for that vehicle.
 
 ### Testing library
 
