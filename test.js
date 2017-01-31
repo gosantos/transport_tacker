@@ -37,7 +37,7 @@ var options = {
     url: 'http://localhost:3000/vehicles/update',
     concurrent: 10,
     method: 'PUT',
-    maxSeconds:10
+    maxSeconds:100
 };
 
 loadtest.loadTest(options, function(error, results)

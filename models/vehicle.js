@@ -22,6 +22,10 @@ var vehicleSchema = new Schema({
     type: Date,
     default: Date.now
   },
+  updateFrequency:{
+    type: Number,
+    default: 20000 //milliseconds
+  },
   heading: { 
     type: Number, 
     min: 0, 

@@ -12,7 +12,7 @@ var vehicles = require('./routes/vehicles');
 
 var app = express();
 
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb://localhost/transport_tracker');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -49,14 +49,16 @@ router.route('/update')
 		    Vehicle.findOne().skip(random).exec(
 		    	function (err, v) {
 
+					vehicle = v;
+
 		        	if (err)
 						return res.send(500, err);
 
-					vehicle = v;
+					if ((Date.now() - vehicle.timestamp) < vehicle.updateFrequency)
+						return res.sendStatus(304);
 		
 					if (city.isOutOfLimit(vehicle.lat, vehicle.lng))
-						return res.sendStatus(304);
-					
+						return res.sendStatus(304);					
 
 					vehicle.move();
 					vehicle.timestamp = Date.now();
