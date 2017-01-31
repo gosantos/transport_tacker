@@ -64,14 +64,25 @@ model/vehicle.js
 
 ### Vehicle moving simulation
 
+The interval time to updated a record uses the method *checkIfNeedsTobeUpdated* in the file *models/vehicle.js*.
+
+
+The moving simulation of all vehicles was did using the algorithim it follows:
+
 http://www.movable-type.co.uk/scripts/latlong.html
 
 The vehicles are changing their positions in 1 km each 20 seconds (I know might be too much, but to test the service is a good approach)
 
+The method *move* in the file *models/vehicle.js* is doing that job.
+
 ### Service
 
-* The service will return a 304 status code when the vehicle is out of city limits.
-* The service will return a 304 status code when the update interval is less than 20 seconds for that vehicle.
+*routes/vehicles.js*.
+
+The "/update" endpoint contains the most complicated logic.
+
+* The service will return a 304 status code when the vehicle is out of city limits (using the *isOutOfLimit* function)
+* The service will return a 304 status code when the update interval is less than 20 seconds for that vehicle. 
 
 ### Testing library
 
@@ -90,4 +101,4 @@ I was not able to make the 1000 concurrent requests and here goes my possible re
 
 * Maybe to support this 1000 concurrent requests would be necessary create multiple backend containers (using docker) and put a middleware between the client and the server, this middleware would act like a load balancer redirecting the requests for the less overloaded container;
 * The service layer is not well implemented, the endpoint "update" shoule be optimized, find a "random vehicle" to update its information is not the best solution;
-* I had not a real server to test this solution, probably in a paid service like Amazon the performance would be pretty much better;
+* I had not a real server to test this solution, in a paid service like Amazon the performance would be pretty much better;
