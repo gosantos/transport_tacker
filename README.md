@@ -42,3 +42,27 @@ $ npm start
 $ npm test
 ```
 ## Regarding the solution
+
+
+### City range vehicles control
+
+### Vehicle moving simulation
+
+### Testing library
+
+I choose the "loadtest" library in order to populate the database and simulate the concurrency update vehicle testing.
+From all libraries I researched, this was in my opinion the easier to use and I thought and as well the more fittable for my scenario.
+
+The library provides a report after the test runs.
+
+### Difficulties Encountered
+
+The service layer is a little bit coupled mainly the method "PUT". In my opinion the right place to use the method "move" to change the vehicle position would be the test, however I was not able to use the testing library to create this scenario. 
+My solution was put the method "move" inside the "/update" endpoint.
+In a real scenario the client will now its information, then the endpoiont used would be the ":id" with the method "PUT". 
+
+I was not able to make the 1000 concurrent requests and here goes my possible reasons for that:
+
+1) Maybe to support this 1000 concurrent requests would be necessary create multiple backend containers (using docker) and put a middleware between the client and the server, this middleware would act like a load balancer redirecting the requests for the less overloaded container;
+2) The service layer is not well implemented, the endpoint "update" shoule be optimized, find a "random vehicle" to update its information is not the best solution;
+3) I had not a real server to test this solution, probably in a paid service like Amazon the performance would be pretty much better;
